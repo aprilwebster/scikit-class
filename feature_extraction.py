@@ -4,10 +4,16 @@ import numpy as np
 df = pd.read_csv('tweets.csv')
 target = df['is_there_an_emotion_directed_at_a_brand_or_product']
 text = df['tweet_text']
+<<<<<<< HEAD
 print text
 
 from sklearn.feature_extraction.text import CountVectorizer
 count_vect = CountVectorizer()
+=======
+from sklearn.feature_extraction.text import CountVectorizer
+count_vect=CountVectorizer()
+count_vect.fit(text[0:8])
+>>>>>>> 615991c8d373c7e7c162d071b0dec451bbb02fea
 
 # Data cleaning - this deals with null lines of text
 fixed_text = text[pd.notnull(text)]

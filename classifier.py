@@ -23,5 +23,9 @@ from sklearn.naive_bayes import MultinomialNB
 nb = MultinomialNB()
 nb.fit(counts, fixed_target)
 
+<<<<<<< HEAD
 print nb.predict(count_vect.transform(["I hate my iphone!!!"]))
+=======
+print nb.predict(count_vect.transform(["iphone!!!"]))
+>>>>>>> 615991c8d373c7e7c162d071b0dec451bbb02fea
 #print nb.predict(count_vect.transform(["iphone cost too much!!!"]))

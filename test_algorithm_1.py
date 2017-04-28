@@ -23,6 +23,7 @@ nb.fit(counts, fixed_target)
 # count how many times there's a mismatch between the prediction and the actual
 #
 predictions = nb.predict(counts)
+<<<<<<< HEAD
 correct = sum(predictions == fixed_target)
 incorrect = sum(predictions != fixed_target)
 
@@ -34,3 +35,9 @@ incorrect = sum(predictions != fixed_target)
 # in machine learning it's common to do 70% for training, and 30% for testing
 accuracy = correct/(correct + incorrect)
 print 'accuracy = ' + str(accuracy * 100)
+=======
+correct= sum(predictions == fixed_target)
+incorrect= sum(predictions != fixed_target)
+acc = correct/(len(fixed_target)+0.)
+print(acc)
+>>>>>>> 615991c8d373c7e7c162d071b0dec451bbb02fea
