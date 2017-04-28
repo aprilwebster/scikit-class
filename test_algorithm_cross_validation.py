@@ -20,6 +20,10 @@ nb = MultinomialNB()
 
 from sklearn import cross_validation
 
+# cross-validation => cv attribute is the number of folds
+
 scores = cross_validation.cross_val_score(nb, counts, fixed_target, cv=10)
 print scores
 print scores.mean()
+print nb.fit(counts,fixed_target)
+print nb.predict(count_vect.transform(["I love my iphone!!"]))

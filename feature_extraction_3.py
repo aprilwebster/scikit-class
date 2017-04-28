@@ -13,6 +13,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 count_vect = CountVectorizer()
 count_vect.fit(fixed_text)
 
+# counts is a matrix of vectors, one for each tweet,
+# that provides the count for each word in the tweet in the CountVectorizer
 counts = count_vect.transform(fixed_text)
+
+print(counts[0])
 
 print count_vect.transform(["I love my iphone!!!"])

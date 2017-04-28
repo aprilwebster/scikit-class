@@ -21,6 +21,13 @@ p = Pipeline(steps=[('counts', CountVectorizer()),
 
 from sklearn.grid_search import GridSearchCV
 
+# maxdf = document frequency = how many documents (here a tweet) you see a particular token in
+#     I'll remove the words that occurred in 50% of the tweets - if a word appears in
+#     50% of the tweets, it provides no added value
+# min_df = if a word only occurred in 1, 2 or 3 docs - e.g., if mention someone's named_steps
+#     this cuts out stuff that might not care about as well, because so rare
+# ngram_range = numbers of pairs
+
 parameters = {
     'counts__max_df': (0.5, 0.75, 1.0),
     'counts__min_df': (1, 2, 3),
@@ -28,6 +35,7 @@ parameters = {
 #    'feature_selection__k': (1000, 10000, 100000)
     }
 
+# Grid search cross validation - it does this on every combination of the specified parameters
 grid_search = GridSearchCV(p, parameters, n_jobs=1, verbose=1, cv=10)
 
 grid_search.fit(fixed_text, fixed_target)

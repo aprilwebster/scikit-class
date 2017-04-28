@@ -19,5 +19,18 @@ from sklearn.naive_bayes import MultinomialNB
 nb = MultinomialNB()
 nb.fit(counts, fixed_target)
 
+# this makes a prediction on every single tweet in the array, and want
+# count how many times there's a mismatch between the prediction and the actual
+#
 predictions = nb.predict(counts)
-print sum(predictions == fixed_target)
+correct = sum(predictions == fixed_target)
+incorrect = sum(predictions != fixed_target)
+
+# what's wrong with the accuracy calculation?
+# note, the algorith accuracy is about 70% - it's 
+# we tested the algorithm on the data we trained the algorithm on
+# this is a really bad thing as we need to test how well the alg generalizes
+# so instead we need to do a test/train split
+# in machine learning it's common to do 70% for training, and 30% for testing
+accuracy = correct/(correct + incorrect)
+print 'accuracy = ' + str(accuracy * 100)

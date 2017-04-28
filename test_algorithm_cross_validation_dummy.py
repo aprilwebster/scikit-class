@@ -18,6 +18,7 @@ counts = count_vect.transform(fixed_text)
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.dummy import DummyClassifier
 
+
 nb = DummyClassifier(strategy='most_frequent')
 
 from sklearn import cross_validation

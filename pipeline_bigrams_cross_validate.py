@@ -13,6 +13,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
+#ngram range is new for this code
 p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 2))),
                 ('multinomialnb', MultinomialNB())])
 

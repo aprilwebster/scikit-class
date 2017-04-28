@@ -18,7 +18,16 @@ counts = count_vect.transform(fixed_text)
 from sklearn.naive_bayes import MultinomialNB
 nb = MultinomialNB()
 
+# Train model on first 6000 tweets
 nb.fit(counts[0:6000], fixed_target[0:6000])
 
+# Test model
 predictions = nb.predict(counts[6000:9092])
 print sum(predictions == fixed_target[6000:9092])
+
+# calculate accuracy
+correct = sum(predictions == fixed_target)
+incorrect = sum(predictions != fixed_target)
+accuracy = correct/(correct + incorrect)
+print 'accuracy'
+print accuracy

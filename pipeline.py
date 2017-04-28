@@ -13,6 +13,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
+# more succint code AND an object can pass around
 p = Pipeline(steps=[('counts', CountVectorizer()),
                 ('multinomialnb', MultinomialNB())])
 

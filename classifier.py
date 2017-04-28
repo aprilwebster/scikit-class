@@ -15,9 +15,13 @@ count_vect.fit(fixed_text)
 
 counts = count_vect.transform(fixed_text)
 
+# now we try to make predictions
+# all the different optionsin naive_bayes are fine
+# what this is doing is it's trying to learn if it's positive, negative or neutral
+# fixed target = positive, negative, neutral
 from sklearn.naive_bayes import MultinomialNB
 nb = MultinomialNB()
 nb.fit(counts, fixed_target)
 
-print nb.predict(count_vect.transform(["I love my iphone!!!"]))
+print nb.predict(count_vect.transform(["I hate my iphone!!!"]))
 #print nb.predict(count_vect.transform(["iphone cost too much!!!"]))
