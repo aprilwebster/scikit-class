@@ -1,6 +1,10 @@
 from keras.datasets import mnist
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
+# X_train is a big array of pixels
+# digit is the digit it is - 0..9
+# image is 128 by 128: 0,0 in top LHcorner to 0,128 in top RHcorner
+
 digit = X_train[0]
 print(digit.shape)
 str = ""

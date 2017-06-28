@@ -1,3 +1,4 @@
+# creates a multi-layer neural network and runs it
 
 from sklearn import datasets
 import numpy as np
